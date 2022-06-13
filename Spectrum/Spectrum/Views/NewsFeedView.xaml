@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spectrum.Views.NewsFeedView"
+             xmlns:data="clr-namespace:Spectrum.Data;assembly=Spectrum"
+             Title="NewsFeed">
+     
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search..."
+                       FontSize="Large"
+                       PlaceholderColor="Gray"
+                       TextColor="Black"
+                       VerticalOptions="StartAndExpand"
+                       TextChanged="SearchBar_TextChanged"
+                />
+        <ListView x:Name="listViewNewsFeed"
+                  ItemsSource="{Binding .}"
+                  HasUnevenRows="True"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="listViewNewsFeed_Refreshing"
+                  ItemTapped="Handle_ItemTapped"
+                  >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="20">
+                           
+                            <Label Text="{Binding Title}"
+                                   FontSize="Large"
+                                   TextColor="Black"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="FillAndExpand"
+                                   />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>       
+
+        </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
