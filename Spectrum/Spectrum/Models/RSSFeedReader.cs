@@ -2,6 +2,7 @@
 #region
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Spectrum.Models
     {
 
         public static List<News> NewsList { set; get; }
-
+       
         public async Task<List<News>> readRSS(string url)
         {
             NewsList = new List<News>();
@@ -50,6 +51,16 @@ namespace Spectrum.Models
                         News n = new News();
                         n.Title = item.Title;
                         n.Link = item.Link;
+
+                        string[] dateTime = item.PubDate.Split(' ');
+                        string date = "";
+                        for(int i=0; i<dateTime.Length-2; i++)
+                        {
+                            date += dateTime[i]+" ";
+                        }
+
+                        n.DatePublished = date;
+                        
                         NewsList.Add(n);
                     }
                 }

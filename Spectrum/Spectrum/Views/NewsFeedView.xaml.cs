@@ -15,10 +15,10 @@ namespace Spectrum.Views
     {
         public ObservableCollection<News> Items { get; set; }
 
-        List<News> news = RSSFeedReader.NewsList;
+        List<News> NewsFeedList = RSSFeedReader.NewsList;
 
       
-        public NewsFeedView ()
+        public NewsFeedView (List<News> news)
         {
             InitializeComponent();
 
@@ -38,7 +38,7 @@ namespace Spectrum.Views
 
         void SearchBar_TextChanged(System.Object sender, TextChangedEventArgs e)
         {
-            listViewNewsFeed.BindingContext = news.Where(n => n.Title.ToLower().Contains(e.NewTextValue.ToLower()));
+            listViewNewsFeed.BindingContext = NewsFeedList.Where(n => n.Title.ToLower().Contains(e.NewTextValue.ToLower()));
 
         }
 

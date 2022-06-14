@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Spectrum.Views.CategoriesView"
+    xmlns:data="clr-namespace:Spectrum.Data;assembly=Spectrum"
+    Title="News Categories"
+    >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <data:ValueConverter x:Key="converter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+     <ContentPage.Content>
+        <ListView x:Name="lstCategoriesView" ItemsSource="{Binding .}" HasUnevenRows="True" ItemTapped="lstCategoriesView_ItemTapped"
+                  IsPullToRefreshEnabled="True" Refreshing="lstCategoriesView_Refreshing"
+                  >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="20,20,10,10" Spacing="10">
+                            
+                            <Label Text="{Binding CategoryName}" FontSize="Large" TextColor="Black" VerticalTextAlignment="Center"
+                                   HorizontalOptions="FillAndExpand"/>
+                            <Image Source="{Binding ImagePath, Converter={StaticResource converter}}" 
+                                   WidthRequest="75" HeightRequest="50"
+                                   Aspect="AspectFit"/>
+                           
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
+

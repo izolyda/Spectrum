@@ -18,7 +18,7 @@ namespace Spectrum
             InitializeComponent();
 
         
-            MainPage = new NavigationPage(new MainView());
+            MainPage = new NavigationPage(new CategoriesView());
        
         }
 

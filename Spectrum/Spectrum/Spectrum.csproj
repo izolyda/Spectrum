@@ -22,10 +22,32 @@
     <None Remove="Data\" />
     <None Remove="System.ServiceModel.Syndication" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Images\" />
+    <None Remove="Images\Culture.png" />
+    <None Remove="Images\Finance.png" />
+    <None Remove="Images\Foreign.png" />
+    <None Remove="Images\Politics.png" />
+    <None Remove="Images\Science.png" />
+    <None Remove="Images\Social.png" />
+    <None Remove="Images\Sports.png" />
+    <None Remove="Images\Tech.png" />
+    <None Remove="Images\Weather.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Models\" />
     <Folder Include="Data\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Culture.png" />
+    <EmbeddedResource Include="Images\Finance.png" />
+    <EmbeddedResource Include="Images\Foreign.png" />
+    <EmbeddedResource Include="Images\Politics.png" />
+    <EmbeddedResource Include="Images\Science.png" />
+    <EmbeddedResource Include="Images\Social.png" />
+    <EmbeddedResource Include="Images\Sports.png" />
+    <EmbeddedResource Include="Images\Tech.png" />
+    <EmbeddedResource Include="Images\Weather.png" />
   </ItemGroup>
 </Project>

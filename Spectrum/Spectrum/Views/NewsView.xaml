@@ -6,20 +6,29 @@
     x:Class="Spectrum.Views.NewsView"
     Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="LightGray">
-           
-           <ActivityIndicator x:Name="activityIndicator"
-                              Color="Blue"
-                              IsRunning="True"
-               />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
             <WebView
                 Source="{Binding Link}"
                 VerticalOptions="FillAndExpand"
                 Navigating="WebView_Navigating"
                 Navigated="WebView_Navigated"
+                Grid.Row="0"
                 />
-        </StackLayout>
-        
+            <ActivityIndicator x:Name="activityIndicator"
+                              Color="SlateGray"
+                              IsRunning="True"
+                              BackgroundColor="Transparent"
+                              Grid.Row="0"
+                              WidthRequest="100"
+                              HeightRequest="100"
+                              VerticalOptions="Center"
+                              HorizontalOptions="Center"
+               />
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
 
