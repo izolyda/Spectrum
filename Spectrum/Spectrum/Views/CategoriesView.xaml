@@ -13,27 +13,30 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-     <ContentPage.Content>
-        <ListView x:Name="lstCategoriesView" ItemsSource="{Binding .}" HasUnevenRows="True" ItemTapped="lstCategoriesView_ItemTapped"
+    
+
+    <ContentPage.Content>
+       
+            <ListView x:Name="lstCategoriesView" ItemsSource="{Binding .}" HasUnevenRows="True" ItemTapped="lstCategoriesView_ItemTapped"
                   IsPullToRefreshEnabled="True" Refreshing="lstCategoriesView_Refreshing"
                   >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="20,20,10,10" Spacing="10">
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="20,20,10,10" Spacing="10">
-                            
-                            <Label Text="{Binding CategoryName}" FontSize="Large" TextColor="Black" VerticalTextAlignment="Center"
+                                <Label Text="{Binding CategoryName}" FontSize="Large" TextColor="Black" VerticalTextAlignment="Center"
                                    HorizontalOptions="FillAndExpand"/>
-                            <Image Source="{Binding ImagePath, Converter={StaticResource converter}}" 
+                                <Image Source="{Binding ImagePath, Converter={StaticResource converter}}" 
                                    WidthRequest="75" HeightRequest="50"
                                    Aspect="AspectFit"/>
-                           
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
     </ContentPage.Content>
 </ContentPage>
 

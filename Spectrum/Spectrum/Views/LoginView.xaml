@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Spectrum.Effects"
+    xmlns:behavior="clr-namespace:Spectrum.Behaviors"
+    x:Class="Spectrum.Views.LoginView"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout x:Name="stackLayoutWelcome" VerticalOptions="Center" Spacing="20">
+                <Label Text="Please login to read news:" TextColor="Black"
+                   HorizontalOptions="Center" FontSize="Medium"/>
+                <BoxView Color="Gray" HeightRequest="1" WidthRequest="300" 
+                     HorizontalOptions="Center"/>
+                <Image Source="scroll.png" HeightRequest="75" Margin="0,100,0,20"/>
+            </StackLayout>
+
+            <StackLayout x:Name="stackLayoutCredentials" Grid.Row="1" VerticalOptions="CenterAndExpand">
+                <Entry Placeholder="Name">
+                    <Entry.Behaviors>
+                        <behavior:UsernameValidator/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Placeholder="Password" IsPassword="True"></Entry>
+            </StackLayout>
+            <Button Text="LOGIN" TextColor="White"
+                    FontSize="Large" VerticalOptions="EndAndExpand"
+                            Clicked="Button_Clicked">
+                <Button.Effects>
+                    <local:OutlineEffect/>
+                </Button.Effects>
+
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

@@ -23,10 +23,24 @@ namespace Spectrum.Views
 		
 			var category = e.Item as Category;
 
-			news = await reader.readRSS(category.URL);
+            try
+            {
+				news = await reader.readRSS(category.URL);
+				await Navigation.PushAsync(new NewsFeedView(news));
+				
 
-			await Navigation.PushAsync(new NewsFeedView(news));
-			lstCategoriesView.SelectedItem = null;
+			}
+            catch (Exception ex)
+            {
+				Console.WriteLine(ex);
+                _ = DisplayAlert("RSS Error", "RSS link not available at this time", "OK");
+			}
+            finally
+            {
+				lstCategoriesView.SelectedItem = null;
+			}
+
+			
 		}
 
         void lstCategoriesView_Refreshing(System.Object sender, System.EventArgs e)
