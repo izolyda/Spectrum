@@ -22,7 +22,6 @@ namespace Spectrum.Data
 				new Category{ CategoryName = "Sports", URL = "https://sportingnews.com/us/rss" },
 				new Category{ CategoryName = "Weather", URL = "https://rssweather.com" },
 				new Category{ CategoryName = "Foreign", URL = "https://feeds.bbci.co.uk/news/world/rss.xml" },
-
 			};
 
 			

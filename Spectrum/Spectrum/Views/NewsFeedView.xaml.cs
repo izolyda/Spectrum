@@ -17,7 +17,9 @@ namespace Spectrum.Views
 
         List<News> NewsFeedList = RSSFeedReader.NewsList;
 
-      
+        private bool _order = true;
+
+
         public NewsFeedView (List<News> news)
         {
             InitializeComponent();
@@ -46,6 +48,13 @@ namespace Spectrum.Views
         {
             listViewNewsFeed.EndRefresh();
 
+        }
+
+        void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        {
+            listViewNewsFeed.BindingContext = _order ? NewsFeedList.OrderBy(x => x.Title).Reverse() : NewsFeedList.OrderBy(x => x.Title);
+
+            _order = !_order;
         }
     }
 }

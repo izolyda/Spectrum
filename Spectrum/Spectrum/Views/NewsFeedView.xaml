@@ -3,7 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Spectrum.Views.NewsFeedView"
              xmlns:data="clr-namespace:Spectrum.Data;assembly=Spectrum"
-             Title="NewsFeed">
+             >
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     Spacing="10">
+            <Label Text="NewsFeed"
+                   HorizontalOptions="Start"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="White"
+                   FontSize="Large"
+                />
+            <Image Source="sort.png" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,5,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ToolbarItem_Clicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout>
