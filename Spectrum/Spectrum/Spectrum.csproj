@@ -34,6 +34,7 @@
     <None Remove="Images\Weather.png" />
     <None Remove="Effects\" />
     <None Remove="Behaviors\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -42,6 +43,7 @@
     <Folder Include="Images\" />
     <Folder Include="Effects\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\Culture.png" />
