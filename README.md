@@ -10,24 +10,24 @@ Dependencies for Xamarin.Android:
 Application was written on Xamarin.Forms, with some native elements as needed. Native functionality was leveraged on Android platform. 
 Built and tested on Android device emulator, API 26.
 
--> App launches with a simple splash screen
+-> **App launches with a simple splash screen**
 
--> Main screen is a login screen, with inputs for name and password. Name is validated using Behavior. 
+-> **Main screen is a login screen**, with inputs for name and password. Name is validated using Behavior. 
 Login screen does not have any backend logic, so it's not a real, fully functional login. You can input whatever values you want or leave it blank.
 Main screen also has a camera image, which is tappable and gets you to an Android native activity, which demonstrates basic leverage of native API 
 and allows taking pictures with camera. The image button is attached to the layout programmatically, so it shouldn't show up on iOS platform.
 Login screen has a "Login" button, the appearance of which was customized using an Effect (code in Xamarin.Droid.Effects)
 User and Password entries appearance was customized using a custom entry Renderer (Xamarin.Android.CustomRenderers)
 
--> Second screen is the news Categories screen. Tapping any of the categories takes you to a screen with news of that category. 
+-> **Second screen is the news Categories screen**. Tapping any of the categories takes you to a screen with news of that category. 
 Weather links to a broken RSS link. I left it like that on purpose.
 
--> NewsFeed screen is where the news parsed from the RSS feed are displayed. It's a sortable list, using a button in the upper right corner.
+-> **NewsFeed screen is where the news parsed from the RSS feed are displayed**. It's a sortable list, using a button in the upper right corner.
 It's set as a toggle, so pressing once sorts it alphabetically, but if pressed again it sorts alphabetically in the opposite order.
 The news title label was customized with a custom Renderer with bindable property 
 (code in Spectrum.Helpers.CustomLabel and on Android side in Xamarin.Android.CustomRenderers.CustomLabelRendered)
 
--> Tapping any of the news title takes you to the last screen, which is the News screen. It renders the news in a Browser element.
+-> **Tapping any of the news title takes you to the last screen**, which is the News screen. It renders the news in a Browser element.
 
 
 Below are the screenshots of the app, as seen on Android phone emulator:
