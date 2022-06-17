@@ -74,6 +74,7 @@
     <Compile Include="Effects.Droid\AndroidOutlineEffect.cs" />
     <Compile Include="Activities\CameraActivity.cs" />
     <Compile Include="Helpers\NativePages.cs" />
+    <Compile Include="CustomRenderers\CustomLabelRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -124,6 +125,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\camera.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\news.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

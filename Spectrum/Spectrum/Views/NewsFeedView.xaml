@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Spectrum.Views.NewsFeedView"
              xmlns:data="clr-namespace:Spectrum.Data;assembly=Spectrum"
+             xmlns:custom="clr-namespace:Spectrum.Helpers;assembly=Spectrum"
              >
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal"
@@ -14,7 +15,7 @@
                    TextColor="White"
                    FontSize="Large"
                 />
-            <Image Source="sort.png" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,5,0">
+            <Image Source="sort.png" HorizontalOptions="EndAndExpand" HeightRequest="30" Margin="0,0,5,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="ToolbarItem_Clicked"/>
                 </Image.GestureRecognizers>
@@ -26,8 +27,8 @@
         <StackLayout>
             <SearchBar Placeholder="Search..."
                        FontSize="Large"
-                       PlaceholderColor="Gray"
-                       TextColor="Black"
+                       PlaceholderColor="#c2c7d5"
+                       TextColor="#7c88a4"
                        VerticalOptions="StartAndExpand"
                        TextChanged="SearchBar_TextChanged"
                 />
@@ -43,9 +44,10 @@
                     <DataTemplate>
                         <ViewCell>
 
-                            <Grid ColumnSpacing="20" RowSpacing="5" Padding="10">
+                            <Grid ColumnSpacing="20" RowSpacing="10" Padding="20,5,20,5">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"
+                                                   />
 
                                 </Grid.RowDefinitions>
 
@@ -53,19 +55,21 @@
                                     <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="0"
+                                <custom:CustomLabel Grid.Row="0" Grid.Column="0"
                                        Text="{Binding Title}"
-                                       FontSize="Medium"
+                                       FontSize="16"
                                        VerticalTextAlignment="Center"
-                                       HorizontalTextAlignment="Start"
-                                       TextColor="Black"/>
+                                       JustifyText="true"
+                                       LineBreakMode="WordWrap"
+                                       TextColor="#7c88a4"/>
                                 <Label Grid.Row="0" Grid.Column="1"
                                         Text="{Binding DatePublished}"
-                                        FontSize="Medium"
-                                        FontAttributes="Bold"
+                                        FontSize="Small"
+                                        FontAttributes="Italic"
                                         VerticalTextAlignment="Center"
                                         HorizontalTextAlignment="Start"
-                                        TextColor="Black"/>
+                                        TextColor="#c2c7d5"
+                                       />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

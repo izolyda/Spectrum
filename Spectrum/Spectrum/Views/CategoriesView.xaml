@@ -25,7 +25,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="20,20,10,10" Spacing="10">
 
-                                <Label Text="{Binding CategoryName}" FontSize="Large" TextColor="Black" VerticalTextAlignment="Center"
+                                <Label Text="{Binding CategoryName}" FontSize="Large" TextColor="#102759" VerticalTextAlignment="Center"
                                    HorizontalOptions="FillAndExpand"/>
                                 <Image Source="{Binding ImagePath, Converter={StaticResource converter}}" 
                                    WidthRequest="75" HeightRequest="50"
