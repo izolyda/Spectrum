@@ -3,9 +3,9 @@
 This is a small RSS news reader with several popular categories. It uses some popular RSS feed links.
 
 Dependencies for Xamarin.Android:
-- System.ServiceModel.Syndication 6.0.0
-- Xamarin.Android.Support.v4 27.0.2
-- Xamarin.Android.Support.v7.AppCompat 27.0.2
+- `System.ServiceModel.Syndication 6.0.0`
+- `Xamarin.Android.Support.v4 27.0.2`
+- `Xamarin.Android.Support.v7.AppCompat 27.0.2`
 
 Application was written on Xamarin.Forms, with some native elements as needed. Native functionality was leveraged on Android platform. 
 Built and tested on Android device emulator, API 26.
